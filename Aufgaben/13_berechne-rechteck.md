@@ -8,14 +8,8 @@ namespace ExceptionHandlen
         public static double berechneFlaschen(double zahl1, double zahl2)
         {
 
-            if (zahl1 > 0 && zahl2 > 0)
-            {
-                return hoch(zahl1) * hoch(zahl2);
-            }
-
-            throw new Exception("Zahl darf nicht kleiner als null sein!");
-
-           
+            return  (zahl1 > 0 && zahl2 > 0) ? hoch(zahl1) * hoch(zahl2) : 
+                throw new Exception("Zahl darf nicht kleiner als null sein!");
         } 
 
         static double hoch(double z)

@@ -1,3 +1,4 @@
+```c#
 using System;
 
 namespace MainProgramm
@@ -27,10 +28,9 @@ namespace MainProgramm
     }
   
 }
-
----
-
 ```
+
+```c#
 using System;
 
 namespace MainProgramm
@@ -66,6 +66,7 @@ namespace MainProgramm
 
 ---
 
+```c#
 using System;
 
 namespace MainProgramm
@@ -106,9 +107,10 @@ namespace MainProgramm
     }
   
 }
-
+```
 ----
 
+```c#
 using System;
 
 namespace MainProgramm
@@ -135,9 +137,10 @@ namespace MainProgramm
     }
   
 }
-
+```
 ----
 
+```c#
 using System;
 
 namespace MainProgramm
@@ -164,9 +167,11 @@ namespace MainProgramm
     }
   
 }
+```
 
 ---
 
+```c#
 using System;
 
 namespace MainProgramm
@@ -199,9 +204,12 @@ namespace MainProgramm
     }
   
 }
+```
 
 
 ---
+
+```c#
 using System;
 
 namespace MainProgramm
@@ -236,7 +244,7 @@ namespace MainProgramm
     }
   
 }
-
+```
 
 
 

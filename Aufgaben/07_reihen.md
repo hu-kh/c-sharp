@@ -1,4 +1,4 @@
-```
+```c#
 using System;
 
 namespace Acdc
@@ -25,7 +25,7 @@ namespace Acdc
 ```
 
 
-```
+```c#
 using System;
 using System.Collections.Generic;
 using System.Text;

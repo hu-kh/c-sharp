@@ -4,7 +4,7 @@
  `sudo apt install mono-complete`
 
 ### Save your C# code as hello.cs her's a hello world code:
-```
+```c#
 using System;
 
 namespace Project_1 {

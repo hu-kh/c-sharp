@@ -1,4 +1,4 @@
-```#c
+```c#
 using System;
 
 namespace EnumTesting

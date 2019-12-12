@@ -1,20 +1,22 @@
+```c#
 using System;
 using System.Threading;
 
-namespace CmdCommand
+namespace Testing
 {
-class Program
+    class Program
     {
         static void Main(string[] args)
         {
 
-            Console.WriteLine("CMD");
+            Console.WriteLine("write your Command: ");
+            string cmd = Console.ReadLine();
 
-            ExecuteCommandSync("dir");
+            ExecuteCommandSync(cmd);
 
             Console.ReadKey();
         }
-          
+
 
         static void ExecuteCommandSync(object command)
         {
@@ -22,7 +24,7 @@ class Program
             {
                 System.Diagnostics.ProcessStartInfo procStartInfo =
                     new System.Diagnostics.ProcessStartInfo("cmd", "/c " + command);
-               
+
                 procStartInfo.RedirectStandardOutput = true;
                 procStartInfo.UseShellExecute = false;
                 procStartInfo.CreateNoWindow = true;
@@ -65,4 +67,4 @@ class Program
         }
     }
 }
-
+```

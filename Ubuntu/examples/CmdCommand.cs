@@ -1,8 +1,8 @@
-```c#
+
 using System;
 using System.Threading;
 
-namespace Testing
+namespace CMDCommand
 {
     class Program
     {
@@ -67,4 +67,4 @@ namespace Testing
         }
     }
 }
-```
+

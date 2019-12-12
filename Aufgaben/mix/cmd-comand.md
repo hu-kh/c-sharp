@@ -13,7 +13,7 @@ namespace CMDCommand
             Console.BackgroundColor = ConsoleColor.Black;
             Console.Clear();
             Console.ForegroundColor = ConsoleColor.Green;
-            Console.WriteLine("write your Command: ");
+            Console.WriteLine("> ");
             string cmd = Console.ReadLine();
             Console.Clear();
             ExecuteCommandSync(cmd);

@@ -11,7 +11,7 @@ namespace CMDCommand
 
             Console.WriteLine("write your Command: ");
             string cmd = Console.ReadLine();
-
+            Console.Clear();
             ExecuteCommandSync(cmd);
 
             Console.ReadKey();

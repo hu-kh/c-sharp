@@ -9,6 +9,7 @@ namespace CMDCommand
         static void Main(string[] args)
         {
             Console.Title = "cmd | running as User";
+            Console.Beep();
             Console.BackgroundColor = ConsoleColor.Black;
             Console.Clear();
             Console.ForegroundColor = ConsoleColor.Green;

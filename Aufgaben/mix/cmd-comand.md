@@ -8,9 +8,9 @@ namespace CMDCommand
     {
         static void Main(string[] args)
         {
-            Console.BackgroundColor = ConsoleColor.DarkBlue;
+            Console.BackgroundColor = ConsoleColor.Black;
             Console.Clear();
-            Console.ForegroundColor = ConsoleColor.White;
+            Console.ForegroundColor = ConsoleColor.Green;
             Console.WriteLine("write your Command: ");
             string cmd = Console.ReadLine();
             Console.Clear();

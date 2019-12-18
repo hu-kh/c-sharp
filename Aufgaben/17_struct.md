@@ -50,3 +50,41 @@ namespace StructClass
 }
 
 ```
+
+
+
+
+```c#
+using System;
+
+namespace StructClass
+{
+    class MClass
+    {
+        struct Coords
+        {
+            public int x, y;
+
+            private Coords(int p1, int p2)
+            {
+                x = p1;
+                y = p2;
+            }
+        }
+
+        public static void mProgram()
+    {
+            Coords coords1;
+            coords1.x = 10;
+            coords1.y = 20;
+
+            Console.Write("Coords 1: ");
+            Console.WriteLine($"x = {coords1.x}, y = {coords1.y}");
+
+            Console.WriteLine("Press any key to exit.");
+            Console.ReadKey();
+
+        }
+    }
+}
+```

@@ -6,23 +6,29 @@ namespace CMDCommand
 {
     class Program
     {
-        static void Main(string[] args)
+         static void Main(string[] args)
+        {
+            Print();
+            string cmd = Console.ReadLine();
+            ExecuteCommandSync(cmd);
+
+            Console.WriteLine("......................");
+            Console.WriteLine("Press any key to exit.");
+            Console.ReadKey();
+        }
+
+        private static void Print()
         {
             Console.Title = "cmd | running as User";
             Console.Beep();
             Console.BackgroundColor = ConsoleColor.Black;
             Console.Clear();
             Console.ForegroundColor = ConsoleColor.Green;
-            Console.WriteLine("> ");
-            string cmd = Console.ReadLine();
-            Console.Clear();
-            ExecuteCommandSync(cmd);
-
-            Console.ReadKey();
+            Console.Write("$ ");
         }
 
 
-        static void ExecuteCommandSync(object command)
+        private static void ExecuteCommandSync(object command)
         {
             try
             {
@@ -47,7 +53,7 @@ namespace CMDCommand
             }
         }
 
-        static void ExecuteCommandAsync(string command)
+        private static void ExecuteCommandAsync(string command)
         {
             try
             {

@@ -2,9 +2,9 @@
 using System;
 using System.IO;
 
-namespace NotizApp
+namespace Note
 {
-    class Note
+    class NotizApp
     {
         private const string FILE_NAME = @"Note.txt";
 
@@ -21,62 +21,90 @@ namespace NotizApp
 
         private static void createFile()
         {
-            // create a writer and open the file
-            TextWriter tw = new StreamWriter(FILE_NAME);
+            try
+            {
+                // create a writer and open the file
+                TextWriter tw = new StreamWriter(FILE_NAME);
 
-            writeNote(tw);
+                writeNote(tw);
 
-            // close the stream
-            tw.Close();
+                // close the stream
+                tw.Close();
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("Error: " + ex.Message);
+            }
         }
 
         private static void readFile()
         {
-            // create reader & open file
-            TextReader tr = new StreamReader(FILE_NAME);
+            try
+            {
+                // create reader & open file
+                TextReader tr = new StreamReader(FILE_NAME);
 
-            // read a line of text
-            Console.WriteLine(tr.ReadToEnd());
+                // read a line of text
+                Console.WriteLine(tr.ReadToEnd());
 
-            // close the stream
-            tr.Close();
+                // close the stream
+                tr.Close();
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("Error: " + ex.Message);
+            }
         }
 
         private static void writeNote(TextWriter tw)
         {
-            string title = "", description = "";
+            int id = 0;
+            char space = ' ';
             bool isTrue = true;
+            string title = "", description = "";
 
-            Console.WriteLine("\nWrite Your Note/s");
+            try
+            {
+                Console.WriteLine("\nWrite Your Note/s");
 
-            while (isTrue == true)
-            { 
-                // title
-                Console.Write("Title: ");
-                title = Console.ReadLine();
-                tw.WriteAsync(title);
-
-                // decription
-                Console.Write("Description: ");
-                description = Console.ReadLine();
-                tw.WriteAsync(description);
-
-                // datatime
-                tw.WriteLine(DateTime.Now);
-
-                // repeat
-                line('.', 70);
-                Console.WriteLine("Write more Notes! <yes = 1> or <no = 2>");
-                int confirm = Convert.ToInt32(Console.ReadLine());
-
-                switch (confirm)
+                while (isTrue == true)
                 {
-                    case 1: isTrue = true; break;
-                    case 2: isTrue = false; break;
-                    default: Console.WriteLine("please only <1> or <2>."); break;
-                }
+                    // id
+                    id++;
+                    tw.WriteLineAsync("[id] " + id + Convert.ToString(space));
 
-                line('.', 70);
+                    // title
+                    Console.Write("Title: ");
+                    title = Console.ReadLine();
+                    tw.WriteLineAsync("[title] " + title + Convert.ToString(space));
+
+                    // decription
+                    Console.Write("Description: ");
+                    description = Console.ReadLine();
+                    tw.WriteLineAsync("[description] " + description + Convert.ToString(space));
+
+                    // datatime
+                    tw.WriteLineAsync("[datetime] " + DateTime.Now);
+
+                    // repeat
+                    line('.', 70);
+
+                    Console.WriteLine("Write more Notes! <yes = 1> or <no = 2>");
+                    int confirm = Convert.ToInt32(Console.ReadLine());
+
+                    switch (confirm)
+                    {
+                        case 1: isTrue = true; break;
+                        case 2: isTrue = false; break;
+                        default: Console.WriteLine("please only <1> or <2>."); break;
+                    }
+
+                    line('.', 70);
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("Error: " + ex.Message);
             }
         }
 
@@ -91,4 +119,5 @@ namespace NotizApp
         }
     }
 }
+
 ```

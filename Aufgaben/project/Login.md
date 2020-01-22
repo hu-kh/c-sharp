@@ -1,7 +1,8 @@
 ```c#
 using System;
+using System.Text;
 
-namespace NotizApp
+namespace Note
 {
     class Login
     {
@@ -16,16 +17,17 @@ namespace NotizApp
                 username = Console.ReadLine();
 
                 Console.Write("Password: ");
-                password = Console.ReadLine();
+                password = hidePassword();
+                Console.WriteLine("\n");
 
                 if (username == "user" && password == "pass")
                 {
-                    Note.app();
+                    NotizApp.app();
                 }
                 else
                 {
                     Console.WriteLine("Try again.");
-                    Console.WriteLine("Hint: [ username => u ] and [ password => p ]");
+                    Console.WriteLine("Hint: [ username => us** ] and [ password => pa**** ]");
                 }
             }
             catch (Exception e)
@@ -33,7 +35,32 @@ namespace NotizApp
                 Console.WriteLine("Error: " + e.Message);
             }
         }
+
+        private string hidePassword()
+        {
+            StringBuilder passwordBuilder = new StringBuilder();
+            bool continueReading = true;
+            char newLineChar = '\r';
+
+            while (continueReading)
+            {
+                ConsoleKeyInfo consoleKeyInfo = Console.ReadKey(true);
+                char passwordChar = consoleKeyInfo.KeyChar;
+
+                if (passwordChar == newLineChar)
+                {
+                    continueReading = false;
+                }
+                else
+                {
+                    passwordBuilder.Append(passwordChar.ToString());
+                }
+            }
+
+            return passwordBuilder.ToString();
+        }
     }
 }
+
 
 ```

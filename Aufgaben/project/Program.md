@@ -1,3 +1,4 @@
+```c#
 using System;
 
 namespace NotizApp
@@ -17,3 +18,4 @@ namespace NotizApp
         }
     }
 }
+```

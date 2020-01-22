@@ -1,7 +1,7 @@
 ```c#
 using System;
 
-namespace NotizApp
+namespace Note
 {
     class Program
     {
@@ -9,13 +9,14 @@ namespace NotizApp
         {
             Console.WriteLine("...........................................................");
             Console.WriteLine("...................... NotizApp ...........................");
-            Console.WriteLine("...........................................................");
-            Console.WriteLine("\n\n");
+            Console.WriteLine("...........................................................\n");
 
             Console.WriteLine("Please login to use this App.");
+
             Login credintial = new Login();
             credintial.login();
         }
     }
 }
+
 ```

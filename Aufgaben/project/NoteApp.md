@@ -2,117 +2,130 @@
 using System;
 using System.IO;
 
-namespace Note
+namespace NotizApp
 {
     class NotizApp
     {
-        private const string FILE_NAME = @"Note.txt";
+        // Dateipfad
+        private const string DATEI_NAME = @"Notiz.txt";
 
         public static void app()
         {
+            // Bildschirm löschen
             Console.Clear();
 
-            createFile();
-            readFile();
+            // Funktionen aufrufen
+            dateiErstellen();
+            dateiLesen();
 
-            Console.WriteLine("Press any key to close App.");
+            // Infotext
+            Console.WriteLine("Drücken Sie bitte eine beliebige Taste ein, um das Programm zu beenden.");
             Console.ReadKey();
         }
 
-        private static void createFile()
+        private static void dateiErstellen()
         {
             try
             {
-                // create a writer and open the file
-                TextWriter tw = new StreamWriter(FILE_NAME);
+                // Erstellt einen Writer und öffnet die Datei
+                TextWriter textWriter = new StreamWriter(DATEI_NAME, true);
 
-                writeNote(tw);
+                // Funktion aufrufen und Eintrag erstellen
+                notizSchreiben(textWriter);
 
-                // close the stream
-                tw.Close();
+                // Schließt den Stream
+                textWriter.Close();
             }
             catch (Exception ex)
             {
-                Console.WriteLine("Error: " + ex.Message);
+                // Fehlermeldung
+                Console.WriteLine("Fehler: " + ex.Message);
             }
         }
 
-        private static void readFile()
+        private static void dateiLesen()
         {
             try
             {
-                // create reader & open file
-                TextReader tr = new StreamReader(FILE_NAME);
+                // Erstellt einen Reader und öffnet die Datei
+                TextReader textReader = new StreamReader(DATEI_NAME);
 
-                // read a line of text
-                Console.WriteLine(tr.ReadToEnd());
+                // Liest eine Zeile
+                Console.WriteLine(textReader.ReadToEnd());
 
-                // close the stream
-                tr.Close();
+                // Schließt den Stream
+                textReader.Close();
             }
             catch (Exception ex)
             {
-                Console.WriteLine("Error: " + ex.Message);
+                // Fehlermeldung
+                Console.WriteLine("Fehler: " + ex.Message);
             }
         }
 
-        private static void writeNote(TextWriter tw)
+        private static async void notizSchreiben(TextWriter textWriter)
         {
-            int id = 0;
-            char space = ' ';
-            bool isTrue = true;
-            string title = "", description = "";
+            // Variable deklaration
+            char leerzeile = ' ';
+            bool istWar = true;
+            string titel = "", beschreibung = "";
 
             try
             {
-                Console.WriteLine("\nWrite Your Note/s");
+                // Infotext
+                Console.WriteLine("\nSchreiben Sie Notiz/en");
 
-                while (isTrue == true)
+                // Notiz schreiben sobald war ist
+                while (istWar == true)
                 {
-                    // id
-                    id++;
-                    tw.WriteLineAsync("[id] " + id + Convert.ToString(space));
+                    // Neue Zeile
+                    string zeilenumbruch = "\n";
+                    await textWriter.WriteLineAsync(zeilenumbruch);
 
-                    // title
-                    Console.Write("Title: ");
-                    title = Console.ReadLine();
-                    tw.WriteLineAsync("[title] " + title + Convert.ToString(space));
+                    // Titel
+                    Console.Write("Titel: ");
+                    titel = Console.ReadLine();
+                    await textWriter.WriteLineAsync("[Titel] " + titel + Convert.ToString(leerzeile));
 
-                    // decription
-                    Console.Write("Description: ");
-                    description = Console.ReadLine();
-                    tw.WriteLineAsync("[description] " + description + Convert.ToString(space));
+                    // Beschreibung
+                    Console.Write("Beschreibung: ");
+                    beschreibung = Console.ReadLine();
+                    await textWriter.WriteLineAsync("[Beschreibung] " + beschreibung + Convert.ToString(leerzeile));
 
-                    // datatime
-                    tw.WriteLineAsync("[datetime] " + DateTime.Now);
+                    // Datum und Uhrzeit
+                    await textWriter.WriteLineAsync("[Datum und Uhrzeit] " + DateTime.Now);
 
-                    // repeat
-                    line('.', 70);
+                    // Eintrag wiederholen
+                    trenner('.', 70);
 
-                    Console.WriteLine("Write more Notes! <yes = 1> or <no = 2>");
-                    int confirm = Convert.ToInt32(Console.ReadLine());
+                    // Infotext
+                    Console.WriteLine("Möchten Sie noch eine Notiz schreiben? <Ja = 1> oder <Nein = 2>");
+                    int bestätigen = Convert.ToInt32(Console.ReadLine());
 
-                    switch (confirm)
+                    // Menü auswählen
+                    switch (bestätigen)
                     {
-                        case 1: isTrue = true; break;
-                        case 2: isTrue = false; break;
-                        default: Console.WriteLine("please only <1> or <2>."); break;
+                        case 1: istWar = true; break;
+                        case 2: istWar = false; break;
+                        default: Console.WriteLine("Bitte nur <1> oder <2>."); break;
                     }
 
-                    line('.', 70);
+                    trenner('.', 70);
                 }
             }
             catch (Exception ex)
             {
-                Console.WriteLine("Error: " + ex.Message);
+                // Fehlermeldung
+                Console.WriteLine("Fehler: " + ex.Message);
             }
         }
 
-        protected static void line(char s, int sLong)
+        protected static void trenner(char symbol, int länge)
         {
-            for (int i = 0; i <= sLong; i++)
+            // Forschleife für Trenner
+            for (int i = 0; i <= länge; i++)
             {
-                Console.Write(s);
+                Console.Write(symbol);
             }
 
             Console.WriteLine();

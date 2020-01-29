@@ -1,66 +1,76 @@
 ```c#
 using System;
-using System.Text;
 
-namespace Note
+namespace NotizApp
 {
-    class Login
+    class Anmeldung
     {
-        public void login()
+        public void anmeldung()
         {
-            string username = "";
-            string password = "";
+            // Variable deklaration
+            string benutzerName = "";
+            string passwort = "";
 
-            try
+            // Eingabe des Benutzers
+            Console.Write("Benutzername: ");
+            benutzerName = Console.ReadLine();
+
+            // Eingabe des Passworts
+            Console.Write("Passwort: ");
+            passwort = passwortVerstecken();
+            Console.WriteLine("\n");
+
+            // Prüft den Benutzername und das Passwort
+            if (benutzerName == "user" && passwort == "pass")
             {
-                Console.Write("Username: ");
-                username = Console.ReadLine();
-
-                Console.Write("Password: ");
-                password = hidePassword();
-                Console.WriteLine("\n");
-
-                if (username == "user" && password == "pass")
-                {
-                    NotizApp.app();
-                }
-                else
-                {
-                    Console.WriteLine("Try again.");
-                    Console.WriteLine("Hint: [ username => us** ] and [ password => pa**** ]");
-                }
+                // Rufe die Hauptanwendung auf
+                NotizApp.app();
             }
-            catch (Exception e)
+            else
             {
-                Console.WriteLine("Error: " + e.Message);
+                // Fehlermeldung 
+                Console.WriteLine("Bitte versuchen Sie es erneut.");
+                Console.WriteLine("Hinweis: [ Benutzername => us** ] und [ Passwort => pa**** ]");
             }
         }
 
-        private string hidePassword()
+        private string passwortVerstecken()
         {
-            StringBuilder passwordBuilder = new StringBuilder();
-            bool continueReading = true;
-            char newLineChar = '\r';
+            // Variable deklaration
+            string passwort = "";
 
-            while (continueReading)
+            // Neues Objekt von Klasse erstellen
+            ConsoleKeyInfo tasteInfo;
+
+            // Zeige Sternchen statt Passwort 
+            do
             {
-                ConsoleKeyInfo consoleKeyInfo = Console.ReadKey(true);
-                char passwordChar = consoleKeyInfo.KeyChar;
-
-                if (passwordChar == newLineChar)
+                tasteInfo = Console.ReadKey(true);
+                // Ignoriert Enter als auch Leerzeile
+                if (tasteInfo.Key != ConsoleKey.Backspace && tasteInfo.Key != ConsoleKey.Enter)
                 {
-                    continueReading = false;
+                    passwort += tasteInfo.KeyChar;
+                    Console.Write("*");
                 }
                 else
                 {
-                    passwordBuilder.Append(passwordChar.ToString());
+                    if (tasteInfo.Key == ConsoleKey.Backspace && passwort.Length > 0)
+                    {
+                        // Lösche den letzten Buchstaben, falls leerzeile gedrückt wird 
+                        passwort = passwort.Substring(0, (passwort.Length - 1));
+                        Console.Write("\b \b");
+                    }
                 }
             }
 
-            return passwordBuilder.ToString();
+            // Passwortabfrage nach Enter beenden
+            while (tasteInfo.Key != ConsoleKey.Enter);
+            Console.WriteLine();
+
+            // Rückgabe Wert
+            return passwort;
         }
     }
 }
-
 
 ```

@@ -1,22 +1,25 @@
 ```c#
 using System;
 
-namespace Note
+namespace NotizApp
+
 {
     class Program
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("...........................................................");
-            Console.WriteLine("...................... NotizApp ...........................");
-            Console.WriteLine("...........................................................\n");
+            Console.WriteLine(".......................................................................");
+            Console.WriteLine(".......................... NotizApp v1.0.0 ............................");
+            Console.WriteLine(".......................................................................\n");
 
-            Console.WriteLine("Please login to use this App.");
+            Console.WriteLine("Bitte melden Sie sich an, um die App zu benutzen.");
 
-            Login credintial = new Login();
-            credintial.login();
+            // Zum anmelden
+            Anmeldung anmeldeinfo = new Anmeldung();
+            anmeldeinfo.anmeldung();
         }
     }
 }
+
 
 ```

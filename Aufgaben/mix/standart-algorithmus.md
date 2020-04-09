@@ -1,6 +1,7 @@
 ### Suche die größe Zahl in der Liste
 
 ```c#
+
 using System;
 
 namespace MainProgramm
@@ -30,11 +31,13 @@ namespace MainProgramm
     }
   
 }
+
 ```
 
 ### Suche den Index der größten Zahl in der Liste
 
 ```c#
+
 using System;
 
 namespace MainProgramm
@@ -70,6 +73,7 @@ namespace MainProgramm
 ### Suche den Index eines Wertes
 
 ```c#
+
 using System;
 
 namespace MainProgramm
@@ -110,12 +114,14 @@ namespace MainProgramm
     }
   
 }
+
 ´´´
 
 
 ###  Berechne die Summe aller Werte der Liste
 
 ```c#
+
 using System;
 
 namespace MainProgramm
@@ -142,12 +148,14 @@ namespace MainProgramm
     }
   
 }
+
 ```
 
 
 ### Berechne den Durchschnitt aller Werte der Liste
 
 ```c#
+
 using System;
 
 namespace MainProgramm
@@ -174,6 +182,7 @@ namespace MainProgramm
     }
   
 }
+
 ```
 
 
@@ -213,6 +222,7 @@ namespace MainProgramm
     }
   
 }
+
 ```
 
 
@@ -256,23 +266,3 @@ namespace MainProgramm
 }
 
 ```
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

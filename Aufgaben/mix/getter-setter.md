@@ -1,5 +1,5 @@
-```
-C# Tutorial 6C#
+```C# 
+
 // ----- Animal.cs -----
 
 using System;

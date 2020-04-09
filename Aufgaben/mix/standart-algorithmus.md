@@ -1,5 +1,6 @@
-## Suche die größe Zahl in der Liste
-```
+### Suche die größe Zahl in der Liste
+
+```c#
 using System;
 
 namespace MainProgramm
@@ -31,8 +32,9 @@ namespace MainProgramm
 }
 ```
 
-## Suche den Index der größten Zahl in der Liste
-```
+### Suche den Index der größten Zahl in der Liste
+
+```c#
 using System;
 
 namespace MainProgramm
@@ -65,8 +67,9 @@ namespace MainProgramm
 
 ```
 
-## Suche den Index eines Wertes
-```
+### Suche den Index eines Wertes
+
+```c#
 using System;
 
 namespace MainProgramm
@@ -110,9 +113,9 @@ namespace MainProgramm
 ´´´
 
 
-## Berechne die Summe aller Werte der Liste
+###  Berechne die Summe aller Werte der Liste
 
-```
+```c#
 using System;
 
 namespace MainProgramm
@@ -142,9 +145,9 @@ namespace MainProgramm
 ```
 
 
-## Berechne den Durchschnitt aller Werte der Liste
+### Berechne den Durchschnitt aller Werte der Liste
 
-```
+```c#
 using System;
 
 namespace MainProgramm
@@ -174,8 +177,11 @@ namespace MainProgramm
 ```
 
 
-#Vergleiche zwei sortierte Listen miteinander
-```using System;
+### Vergleiche zwei sortierte Listen miteinander
+
+```c#
+
+using System;
 
 namespace MainProgramm
 {
@@ -210,8 +216,10 @@ namespace MainProgramm
 ```
 
 
-## Vergleiche zwei unsortierte Listen miteinander
-```
+### Vergleiche zwei unsortierte Listen miteinander
+
+```c#
+
 using System;
 
 namespace MainProgramm

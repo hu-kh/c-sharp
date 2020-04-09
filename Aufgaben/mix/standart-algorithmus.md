@@ -34,7 +34,9 @@ namespace MainProgramm
 
 ```
 
+
 ### Suche den Index der größten Zahl in der Liste
+
 
 ```c#
 
@@ -70,55 +72,12 @@ namespace MainProgramm
 
 ```
 
-### Suche den Index eines Wertes
 
-```c#
 
-using System;
-
-namespace MainProgramm
-{
-   class Program
-   {
-        static void Main(string[] args)
-        {
-            int[] liste = {1, 2, 4, 45, 66, 8, 3, 90, 100};
-            Console.WriteLine(indexWert(liste, 2));
-            Console.ReadKey();
-        }
-
-        static int indexWert(int[] arr, int wert)
-        {
-            int anzahl = arr.Length;
-            bool gefunden = false;
-            int index = 0;
-
-            while(index < anzahl && gefunden == false){
-                if(arr[index] == wert)
-                {
-                    gefunden = true;
-                }else
-                {
-                    index = index +1;
-                }
-
-                if(gefunden == true)
-                {
-                    return index;
-                }else
-                {
-                    return -1;
-                }
-            };
-        }
-    }
-  
-}
-
-´´´
 
 
 ###  Berechne die Summe aller Werte der Liste
+
 
 ```c#
 
@@ -266,3 +225,52 @@ namespace MainProgramm
 }
 
 ```
+
+
+### Suche den Index eines Wertes
+
+
+``` c#
+
+using System;
+
+namespace MainProgramm
+{
+   class Program
+   {
+        static void Main(string[] args)
+        {
+            int[] liste = {1, 2, 4, 45, 66, 8, 3, 90, 100};
+            Console.WriteLine(indexWert(liste, 2));
+            Console.ReadKey();
+        }
+
+        static int indexWert(int[] arr, int wert)
+        {
+            int anzahl = arr.Length;
+            bool gefunden = false;
+            int index = 0;
+
+            while(index < anzahl && gefunden == false){
+                if(arr[index] == wert)
+                {
+                    gefunden = true;
+                }else
+                {
+                    index = index +1;
+                }
+
+                if(gefunden == true)
+                {
+                    return index;
+                }else
+                {
+                    return -1;
+                }
+            };
+        }
+    }
+  
+}
+
+´´´

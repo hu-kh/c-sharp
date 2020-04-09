@@ -1,5 +1,5 @@
-```
-// Start Programm
+```c#
+
 using System;
 
 namespace MeinClass
@@ -13,19 +13,16 @@ namespace MeinClass
 
             Console.WriteLine("Hello World!{0}", test);
 
-	//using Parse
+	    //using Parse
             string text = "500";
             int num = int.Parse(text);
             Console.WriteLine(num);
-
-           
         }
-
-
     }
 }
 
 // Neue Class
+
 using System;
 using System.Collections.Generic;
 using System.Text;

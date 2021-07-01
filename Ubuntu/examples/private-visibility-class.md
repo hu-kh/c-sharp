@@ -34,13 +34,8 @@ namespace RectangleApplication {
 }
 ```
 
-
 __output__
 
 Enter Length:
-4.4
-Enter Width:
-3.3
-Length: 4.4
-Width: 3.3
-Area: 14.52
+4.4 Enter Width:
+3.3 Length: 4.4 Width: 3.3 Area: 14.52

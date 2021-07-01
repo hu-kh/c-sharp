@@ -24,7 +24,6 @@ namespace Acdc
 }
 ```
 
-
 ```c#
 using System;
 using System.Collections.Generic;
@@ -67,4 +66,4 @@ namespace Acdc
 
 ```
 
-#161019
+# 161019

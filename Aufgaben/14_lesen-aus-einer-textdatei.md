@@ -46,6 +46,7 @@ namespace Something
 ```
 
 ### in Main()
+
 ```c#
 using System;
 using System.IO;

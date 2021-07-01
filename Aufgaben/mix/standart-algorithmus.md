@@ -34,9 +34,7 @@ namespace MainProgramm
 
 ```
 
-
 ### Suche den Index der größten Zahl in der Liste
-
 
 ```c#
 
@@ -72,12 +70,7 @@ namespace MainProgramm
 
 ```
 
-
-
-
-
-###  Berechne die Summe aller Werte der Liste
-
+### Berechne die Summe aller Werte der Liste
 
 ```c#
 
@@ -109,7 +102,6 @@ namespace MainProgramm
 }
 
 ```
-
 
 ### Berechne den Durchschnitt aller Werte der Liste
 
@@ -143,7 +135,6 @@ namespace MainProgramm
 }
 
 ```
-
 
 ### Vergleiche zwei sortierte Listen miteinander
 
@@ -183,7 +174,6 @@ namespace MainProgramm
 }
 
 ```
-
 
 ### Vergleiche zwei unsortierte Listen miteinander
 
@@ -226,9 +216,7 @@ namespace MainProgramm
 
 ```
 
-
 ### Suche den Index eines Wertes
-
 
 ``` c#
 

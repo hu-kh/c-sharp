@@ -3,7 +3,7 @@ using System.Net.Mail;
 using System.Net;
 
 
-namespace MainProgramm
+namespace MainProgram
 {
    class Program
    {

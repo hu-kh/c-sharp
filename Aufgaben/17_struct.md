@@ -51,9 +51,6 @@ namespace StructClass
 
 ```
 
-
-
-
 ```c#
 using System;
 

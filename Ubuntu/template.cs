@@ -1,6 +1,6 @@
 using System;
 
-namespace MainProgramm
+namespace MainProgram
 {
     class Program
     {

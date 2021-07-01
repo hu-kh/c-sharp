@@ -56,7 +56,6 @@ namespace EnumTest
 }
 ```
 
-
 ```c#
 using System;
 
